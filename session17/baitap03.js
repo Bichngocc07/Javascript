@@ -1,3 +1,3 @@
-let str1 =("phạm thị lan hồng");
-let str2 = str1.toUpperCase(str1);
-console.log("PHẠM THỊ LAN HỒNG", str2);
+let fullName = prompt("Nhập họ và tên đầy đủ của bạn:");
+let upperCaseName = fullName.toUpperCase();
+console.log("Tên viết hoa là:", upperCaseName);
