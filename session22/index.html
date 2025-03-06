@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+       /* 
+       Mảng:
+       trong js chia thành 2 nhóm kiểu dữ liệu
+       1. nguyên thủy, đơn giản, tham trị, primitive type
+       number, string, boolean, null, NaN...
+
+       2. phức tạp, tham chiếu, reference type 
+       array, function, object
+
+       
+       */
+      /* 
+        CRUD:
+        1. C _ CREATE  thêm
+         + push(): thêm phần tử vào cuối
+         + unshift(): thêm phần vào đầu
+         + splice(vị trí phần tử, số phần tử muốn xóa,
+         giá trị muốn thay thế phần tử vừa xóa)
+        2. R _ READ đọc
+         + for thường
+         + for in
+         + for of
+        3. U _ UPDATE
+         + truy cập theo index
+         + dùng splice
+        4. delete
+         + pop(): xóa phần tử cuối
+         + shift(): xóa phần tử đầu
+         + slice()
+      */
+     let arr=[3,5,6];
+     arr.splice(1,2);
+    
+    // arr.splice(1,0,4);
+    // arr.push(7);
+    for (let i = 0; i < arr.length; i++) {
+            // console.log(`phần tử thứ ${i+1} là ${arr[i]}`);
+            
+    }
+    for (const abc in arr) {
+        // console.log(arr[abc]);
+        
+    }
+    for (const item of arr) {
+        console.log(item);
+        
+    }
+    // console.log("arr",arr);
+    let numbers=[1,3,6,4,5];
+    console.log(numbers.includes(3));
+    </script>
+</body>
+</html>
