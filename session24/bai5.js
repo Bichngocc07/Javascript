@@ -1,5 +1,3 @@
-const readlineSync = require('readline-sync');
-
 let matrix = [];
 let rows = 0;
 let cols = 0;
@@ -102,7 +100,7 @@ while (true) {
 
     else if (choice === 6) {
         if (matrix.length === 0) {
-            console.log('⚠ Mảng chưa được nhập. Vui lòng nhập mảng trước.\n');
+            console.log('Mảng chưa được nhập. Vui lòng nhập mảng trước.\n');
             continue;
         }
         console.log('1. Tính trung bình hàng');
@@ -114,7 +112,7 @@ while (true) {
             while (true) {
                 rowIndex = parseInt(readlineSync.question('Nhập chỉ số hàng: '));
                 if (!isNaN(rowIndex) && rowIndex >= 0 && rowIndex < rows) break;
-                console.log('⚠ Chỉ số hàng không hợp lệ. Vui lòng nhập lại.');
+                console.log('Chỉ số hàng không hợp lệ. Vui lòng nhập lại.');
             }
             let sum = 0;
             for (let j = 0; j < cols; j++) {
@@ -138,7 +136,7 @@ while (true) {
         }
 
         else {
-            console.log('⚠ Lựa chọn không hợp lệ.\n');
+            console.log('Lựa chọn không hợp lệ.\n');
         }
     }
 
