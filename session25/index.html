@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        /* 
+        1. cách khai báo hàm
+        2. để hàm được thực thi phải gọi hàm
+        3. tham số, đối số trong hàm
+            tham số: parameter: giá trị khi khai báo
+            đối số: argument: giá trị khi gọi hàm và truyền giá trị
+        4. return trong hàm
+            break: dừng thoát vòng lặp
+            return : hàm
+            + dừng hàm 
+        */
+        // function bình thường
+        function register() {
+
+        }
+        // function expression
+        const add = function () {
+
+        }
+        // arrow function
+        const checkEmail = () => {
+
+        }
+        function sayHello() {
+            console.log("xin chào!");
+
+        }
+        sayHello();
+
+        function sum(a, b, c) {
+            // console.log(a+b+c);
+
+        }
+        sum(1, 2, 3);//6
+        sum(1, "hello", 3);// "1hello3"
+
+        /* 
+        
+            kiểm tra các phần tử chẵn trong mảng bất kì
+        */
+        function checkEven(arr) {
+            for (let i = 0; i < arr.length; i++) {
+                console.log("44343434");
+
+                if (arr[i] % 2 == 0) {
+                    console.log(arr[i]);
+
+                }
+
+            }
+        }
+        //    checkEven([1,3,6,7]);
+        //    checkEven([4,3,66,78]);
+        checkEven("hello");
+        //    checkEven(5);
+
+        function isLogin() {
+            if (5 == "5") {
+                return "đăng nhập thất  bại! ";
+
+            }
+            console.log("đăng nhập thành công!");
+
+        }
+        console.log(isLogin());
+        
+
+
+    </script>
+</body>
+
+</html>
