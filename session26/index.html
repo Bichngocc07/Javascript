@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /* 
+            Các hàm nâng cao trong JS
+            LÀM VIỆC VỚI MẢNG
+            Method : Phương thức
+            property : thuộc tính
+            1. filter _ lọc ()
+            2. map ()
+            3. forEach ()
+            4. reduce ()
+            5. find ()
+            6. findIndex ()
+            7. some ()
+            8. every()
+            9. indexOf()
+            10. includes()
+            11. endsWidth()
+            12. startWidth()
+
+            I- ĐẦU VÀO PHƯƠNG THỨC NHẬN LÀ GÌ
+            II- ĐẦU RA 
+                Kết quả khi sử dụng phương thức
+        */
+       // filter : lọc sẽ tạo ra 1 mảng mới
+       /* 
+            đầu vào nhận vào 1 cái hàm
+            đầu ra trả về 1 mảng
+                + [chứa phần tử]
+                + [] mảng rỗng
+       */
+      let numbers=[3,4,55,66,7,3,32,12];
+
+    //    let result= numbers.filter(
+    //         function sayHello(item, index, arr){
+    //             return item>20;
+    //         })
+      let result= numbers.filter((item, index, arr)=>{
+            return item%17==0
+      })
+
+      console.log("kết quả",result);
+     
+    </script>
+</body>
+</html>

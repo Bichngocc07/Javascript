@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /* phương thức reduce
+            ĐẦU VÀO:
+                1. MỘT CÁI HÀM
+                2. GIÁ TRỊ KHỞI TẠO
+            thường dùng để tính toán các giá trị phần tử ở trong mảng
+        */
+       let numbers= [2,4,5,7,2,1,3,4,55,44];
+       let sum=0;
+        for (let i = 0; i < numbers.length; i++) {
+           sum+= numbers[i];
+        }
+        // accumulator: BIẾN TÍCH LŨY
+        let result= numbers.reduce((acc,item,arr)=>{
+            return acc+item;
+        })
+
+
+        let cart=[["mèn mén",5,30000], ["mì tôm",4,5000]];
+        let pay= cart.reduce((accumulator, item)=>{
+            return  accumulator+item[1]*item[2]
+        },0)
+        console.log("giá",pay);
+        
+        
+    </script>
+</body>
+</html>
