@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        /* 
+        I_ Cách khai báo đối tượng
+            - new Object()
+            let TÊN_ĐỐI_TƯỢNG={};
+            // đặt tên đối tượng giống đặt tên biến 
+        II- bên trong đối tượng có những gì?
+            +THUỘC TÍNH_property_key
+            +PHƯƠNG THỨC : method
+
+        III- tương tác với các thành phần bên trong đối tượng như thế nào?
+            CRUD:
+            1. C CREATE : THÊM thuộc tính 
+            TÊN ĐỐI TƯỢNG .THUỘC TÍNH = GIÁ TRỊ
+            2. R READ : in ra thuộc tính và giá trị của thuộc tính
+            for_in
+            3. U UPDATE : cập nhật giá trị của thuộc tính
+            4. D DELETE: XÓA THUỘC TÍNH 
+            delete TÊN ĐỐI TƯỢNG . THUỘC TÍNH
+
+        */
+        let student = {
+            name: "nguyễn văn tùng",
+            age: 20,
+            gender:"male",
+            // key:123,
+            //  say: function sayHello() {  
+            //  }
+        }
+        //    console.log(student.name);
+
+        student.address = "Hà Nội";
+        for (const key in student) {
+            // console.log("key", student[key]);
+
+        }
+        student.age=25;
+        student.gender="female";
+        delete student.age;
+        console.log("student",student);
+
+
+    </script>
+</body>
+
+</html>
