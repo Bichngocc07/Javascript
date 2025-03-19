@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #content{
+            color: red;
+        }
+        .h3{
+            color: red;
+        }
+    </style>
+</head>
+<body> học DOM </h1>
+    <h2 class="heading"> học dom cơ bản!</h2>
+    <a href=""></a>
+    <img src="" alt="">
+    <input type="text" value="" placeholder="">
+    <p>text1</p>
+    <p>text2</p>
+    <h3 class="h3"> nội dung thẻ h3</h3>
+    <button onclick="changeColor()">change color</button>
+    <h4> nội dung thẻ h4</h4>
+
+    <!-- 
+        DOM: document object model : mô hình tài liệu dạng đối tượng
+        khi trang web tải lên trình duyệt sẽ tạo ra một mô hình DOM
+        công dụng:
+        JS: CÓ THẺ:
+        + thay đổi các phần tử(element) html
+        + thay đổi các thuộc tính( attribute)
+        + thay đổi các style trên trang 
+        + thay đổi nội dung của phần tử HTML...
+        ...
+        Các thành phần chính trong DOM
+        1. document phần tử to nhất trong cây DOM
+        2. ELEMENT : phần tử, tagname
+            CÁC CÁCH LẤY ELEMENT
+            1. lấy theo tên thẻ
+            2. lấy theo class
+            ==> trả về HTML collection dạng mảng
+            3. lấy theo id
+             document.getElementById();
+             ==> trả về 1 phần tử
+        3. ATTRIBUTE: thuộc tính
+
+        4. TEXT : nội dung của phần tử
+            + innerText
+            + textContent
+            + innerHTML
+     -->
+        <script>
+            // let element= document.getElementsByTagName("p");
+            // console.log(element[1]);
+           
+            let element= document.getElementsByClassName("heading");
+            // element[0].id="content";
+            element[0].setAttribute("id","content");
+            // element[0].className="test1";
+            // element[0].classList.add("test1");
+            // element[0].classList.remove("heading");
+            // element[0].classList.toggle("")
+           let result= element[0].classList.contains("heading1");
+           console.log(result);
+            
+            let student={
+                name:"minh thu",
+            }
+            student.age=25;
+           
+            // class là từ khóa đặc biệt ở trong js dùng để tạo lớp
+            // đối tượng
+            function changeColor() {
+                let h3Element= document.getElementsByTagName("h3");
+                h3Element[0].classList.toggle("h3");
+            }
+            document.getElementsByTagName("h4")[0].innerHTML="xin chào!";
+            
+
+        </script>
+</body>
+</html>

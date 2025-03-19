@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="register()">register</button>
+    <button id="login">login</button>
+    <!-- 
+        EVENT: SỰ KIỆN
+        1. TƯƠNG TÁC VỚI CHUỘT
+        2. TƯƠNG TÁC VỚI BÀN PHÍM
+    -->
+        <script>
+            function register() {
+                console.log("đăng kí");
+                
+            }
+            let btn= document.getElementById("login");
+             btn.addEventListener("click",()=>{
+                console.log("thực hiện đăng nhập");  
+             })
+             document.addEventListener("keydown",(event)=>{
+                console.log("event:",event);
+                
+             })
+        </script>
+</body>
+</html>

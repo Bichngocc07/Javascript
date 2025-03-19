@@ -1,0 +1,60 @@
+<!-- Khi click chuột đi qua ô vuông nào, background 
+sẽ đổi theo màu ô vuông.
+Ví dụ khi click vào ô vuông màu tím kết quả sẽ 
+hiển thị như sau: -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container{
+            border : 1px solid black;
+        }
+        .block{
+            display: flex;
+        }
+        .block1{
+            background-color: green;
+            height: 100px;
+            width: 100px;
+        }
+        .block2{
+            background-color: red;
+            height: 100px;
+            width: 100px;
+        }
+        .block3{
+            background-color:purple;
+            height: 100px;
+            width: 100px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <p>Change background-color</p>
+        <p>Mouse Click</p>
+        <div class="block">
+            <div class="block1">Xanh</div>
+            <div class="block2">Đỏ</div>
+            <div class="block3">Tím</div>
+        </div>
+    </div>
+    <script>
+        document.getElementsByClassName("block1")[0].addEventListener("click",()=>{
+            document.getElementsByClassName("container")[0].style.backgroundColor = "green";
+        });
+        document.getElementsByClassName("block2")[0].addEventListener("click",()=>{
+            console.log("ushauuhf");
+            
+            document.getElementsByClassName("container")[0].style.backgroundColor = "red";
+        });
+        document.getElementsByClassName("block3")[0].addEventListener("click",()=>{
+            document.getElementsByClassName("container")[0].style.backgroundColor="violet";
+        })
+    </script>
+</body>
+</html>
