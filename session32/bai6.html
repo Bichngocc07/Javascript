@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thay Đổi Kích Thước Chữ</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f4f4f4;
+        }
+
+        .container {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: 500px;
+        }
+
+        .text {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        .buttons {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .btn {
+            width: 50px;
+            height: 50px;
+            border: none;
+            border-radius: 5px;
+            font-size: 24px;
+            cursor: pointer;
+            color: white;
+        }
+
+        .btn-increase {
+            background-color: green;
+        }
+
+        .btn-decrease {
+            background-color: red;
+        }
+
+        .btn:hover {
+            opacity: 0.8;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <p class="text" id="text">Chữ sẽ thay đổi kích thước khi bấm nút</p>
+        <div class="buttons">
+            <button class="btn btn-increase" id="increase">+</button>
+            <button class="btn btn-decrease" id="decrease">-</button>
+        </div>
+    </div>
+
+    <script>
+        let textElement = document.getElementById("text");
+        let increaseButton = document.getElementById("increase");
+        let decreaseButton = document.getElementById("decrease");
+
+        let fontSize = 24; // Kích thước chữ mặc định
+
+        increaseButton.addEventListener("click", function() {
+            fontSize += 2; // Tăng kích thước
+            textElement.style.fontSize = fontSize + "px";
+        });
+
+        decreaseButton.addEventListener("click", function() {
+            if (fontSize > 10) { // Giới hạn kích thước tối thiểu
+                fontSize -= 2; // Giảm kích thước
+                textElement.style.fontSize = fontSize + "px";
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đổi màu nền</title>
+    <style>
+        .container {
+            display: flex;
+            gap: 20px;
+        }
+        .box {
+            width: 300px;
+            height: 150px;
+            border: 2px solid black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        button {
+            padding: 10px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box">
+            <button onclick="changeColor(this)">Đổi màu nền</button>
+        </div>
+        <div class="box">
+            <button onclick="changeColor(this)">Đổi màu nền</button>
+        </div>
+    </div>
+
+    <script>
+        function getRandomColor() {
+            let letters = '0123456789ABCDEF';
+            let color = '#';
+            for (let i = 0; i < 6; i++) {
+                color += letters[Math.floor(Math.random() * 16)];
+            }
+            return color;
+        }
+
+        function changeColor(button) {
+            let box = button.parentElement;
+            box.style.backgroundColor = getRandomColor();
+        }
+    </script>
+
+</body>
+</html>

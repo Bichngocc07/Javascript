@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Danh sách môn học</title>
+</head>
+<body>
+    <form id="monHocForm">
+        <input type="text" id="monHocInput" placeholder="Nhập tên môn học">
+        <button type="submit">Thêm từng môn</button>
+    </form>
+    <ul id="monHocList">
+        
+    </ul>
+    
+    <script>
+        let monhoc = [];
+
+        function inMonHoc() {
+            let str = "";
+            for (let i = 0; i < monhoc.length; i++) {
+                str += `<li>${monhoc[i]}</li>`;
+            }
+            document.getElementById("monHocList").innerHTML = str;
+        }
+
+        const form = document.getElementById("monHocForm");
+        form.addEventListener("submit", function(event) {
+            event.preventDefault();
+
+            const input = document.getElementById("monHocInput");
+            const monHocMoi = input.value.trim();
+
+            if (monHocMoi === "") {
+                alert("Tên môn học không được để trống!");
+            } else {
+                monhoc.push(monHocMoi);
+                inMonHoc(); 
+                input.value = "";
+            }
+        });
+    </script>
+</body>
+</html>

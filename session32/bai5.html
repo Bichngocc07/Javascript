@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .add-btn {
+            background-color: rgb(2, 246, 2);
+            border-radius: 5px;
+            color: rgb(0, 0, 0);
+        }
+        .delete-btn {
+            background: red;
+            font-size: 15px;
+            border-radius: 5px;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        .container {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>To-Do List K24_PTIT</h2>
+        <input type="text" id="taskInput" placeholder="Nhập nhiệm vụ...">
+        <button class="add-btn" onclick="addTask()">Thêm</button>
+        <ul id="taskList"></ul>
+    </div>
+    <script>
+        function addTask() {
+            const taskInput = document.getElementById("taskInput");
+            const taskText = taskInput.value.trim();
+            if (taskText === "") return;
+
+            const taskList = document.getElementById("taskList");
+            const li = document.createElement("li");
+            li.innerHTML = `học dom js <button class="delete-btn" onclick="confirmRemoveTask(this)">x</button>`;
+            taskList.appendChild(li);
+            taskInput.value = "";
+        }
+
+        function confirmRemoveTask(button) {
+            if (confirm("Bạn có chắc chắn muốn xóa nhiệm vụ này không?")) {
+                button.parentElement.remove();
+            }
+        }
+    </script>
+</body>
+</html>
