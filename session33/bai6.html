@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ứng dụng Thời tiết</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f0f0f0;
+        }
+        .container {
+            max-width: 400px;
+            margin: 50px auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        input {
+            width: 80%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            padding: 10px;
+            border: none;
+            background: blue;
+            color: white;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .weather-info {
+            margin-top: 20px;
+            padding: 20px;
+            background: #ffeb3b;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Ứng dụng Thời tiết</h2>
+        <input type="text" id="cityInput" placeholder="Nhập thành phố...">
+        <button onclick="getWeather()">Tìm kiếm</button>
+        <div id="weatherDisplay"></div>
+    </div>
+    
+    <script>
+        const weatherData = {
+            "Hà Nội": { temperature: 25, humidity: 78, windSpeed: 5, description: "Có mây" },
+            "Hồ Chí Minh": { temperature: 32, humidity: 75, windSpeed: 7, description: "Nắng" },
+            "Đà Nẵng": { temperature: 28, humidity: 82, windSpeed: 12, description: "Mưa rào" }
+        };
+
+        function getWeather() {
+            const city = document.getElementById("cityInput").value.trim();
+            const weatherDisplay = document.getElementById("weatherDisplay");
+            
+            if (weatherData[city]) {
+                const { temperature, humidity, windSpeed, description } = weatherData[city];
+                weatherDisplay.innerHTML = `
+                    <div class='weather-info'>
+                        <h3>${city}</h3>
+                        <p><strong>${temperature}°C</strong></p>
+                        <p>${description}</p>
+                        <p>Độ ẩm: ${humidity}%</p>
+                        <p>Tốc độ gió: ${windSpeed} km/h</p>
+                    </div>
+                `;
+            } else {
+                weatherDisplay.innerHTML = "<p style='color: red;'>Thành phố không tồn tại!</p>";
+            }
+        }
+    </script>
+</body>
+</html>

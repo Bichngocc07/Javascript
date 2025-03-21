@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <select  onclick="choice" name="" id="">
+        <option value="">Lựa chọn danh mục</option>
+        <option value="">Đồ ăn</option>
+        <option value="">Nước</option>
+        <option value="">Dụng cụ</option>
+    </select>
+    <button class="btn">lọc</button>
+    <script>
+        let dish=[
+            { name: 'Rau sạch', category:'Đồ ăn'},
+            { name: 'Thịt lợn', category:'Đồ ăn'},
+            { name: 'Pepsi không calo', category:'Nước'},
+            { name: 'Cocacola', category:'Nước'},
+            { name: 'Cờ lê', category:'Dụng cụ'},
+            { name: 'Tuy vít', category:'Dụng cụ'},
+        ]
+        function render(){
+            let str="";
+            for(let i=0;i<dish.length;i++){
+                str+=`<li>$(dish)[i].</li>`
+            }
+            document.getElementsByTagName("list").innerHTML=str;
+        }
+        render()
+        function choice(){
+            document.getElementById("dish").value;
+            console.log(show);
+            let result=dish.filter(item=>item.category==show)
+            render(result);
+            if(result.length==0){
+                render(dish);
+            }else{
+                render(result);
+            }
+        }
+    </script>
+</body>
+</html>

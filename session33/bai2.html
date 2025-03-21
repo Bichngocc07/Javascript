@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="content">
+    <textarea name="" id="note"></textarea>
+    <p>ki tu</p>
+    <button type="button" onclick="btn()">kiem tra</button>
+    </div>
+
+    <script>
+        function prinIput(){
+            let name=document.getElementById("note");
+            let count=document.getElementsByTagName("p")[0].innerHTML = name.lenght +`ki tu`;
+        }
+    </script>
+</body>
+
+</html>
