@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 
+        dịch vụ lưu trữ dữ liệu lâu dài trên trình duyệt
+        I- dung lượng lưu trữ tầm 5MB
+        1MB= 1024KB, 1 cái ảnh bình thường 50-200kb
+        II- các lưu dữ liệu
+            cú pháp
+            localstorage.setItem("tên key","value");
+            NOTE: MUỐN LƯU DẠNG MẢNG THÌ PHẢI CHUYỂN SANG ĐỊNH
+            DẠNG JSON ĐỂ LƯU (JSON.stringify());
+        III- lấy dữ liệu
+            localstorage.getItem("tên _key");
+        IV- Xóa
+        xóa từng key
+        localstorage.removeItem("tên key");
+        xóa hết
+        localstorage.clear().
+    -->
+    <script>
+        // let fullName="nguyễn kim lệ";
+        // let age=26;
+        // let numbers=[1,2,3,4,5];
+        // localStorage.setItem("fullName",fullName);
+        // localStorage.setItem("age",age);
+        // localStorage.setItem("numbers",JSON.stringify(numbers));
+        // let numbers= localStorage.getItem("numbers");
+        // let products=[
+        //     {
+        //         id:1,
+        //         name:"iphone15"
+        //     },
+        //     {
+        //         id:2,
+        //         name:"iphone16"
+        //     }
+        // ]
+        // localStorage.setItem("products",JSON.stringify(products));
+        let products= JSON.parse(localStorage.getItem("products"));
+        console.log(111,products);
+        
+        
+    </script>
+</body>
+</html>

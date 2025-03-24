@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Danh sách nhân viên Rikkei</title>
+</head>
+<body>
+    <h3>Danh sách nhân viên Rikkei</h3>
+    <label for="employeeName">Tên nhân viên</label>
+    <input id="employeeName" type="text" placeholder="">
+    <label for="position">Chức vụ</label>
+    <input id="position" type="text" placeholder=""><br><br>
+    <button onclick="addEmployee()">Thêm nhân viên</button><br>
+    <br>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>STT</th>
+                <th>Tên</th>
+                <th>Chức vụ</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>Nguyễn Văn A</td>
+                <td>Developer</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Trần Thị B</td>
+                <td>Designer</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>Phạm Văn C</td>
+                <td>Project Manager</td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+<script>
+    function addEmployee() {
+        const employeeName = document.getElementById("employeeName").value.trim();
+        const position = document.getElementById("position").value.trim();
+
+        if (!employeeName || !position) {
+            console.log("Vui lòng nhập đầy đủ thông tin!");
+            return;
+        }
+
+        const table = document.querySelector("tbody");
+        const newRow = document.createElement("tr");
+
+        const sttCell = document.createElement("td");
+        sttCell.textContent = table.rows.length + 1;
+        const nameCell = document.createElement("td");
+        nameCell.textContent = employeeName;
+        const positionCell = document.createElement("td");
+        positionCell.textContent = position;
+
+        newRow.appendChild(sttCell);
+        newRow.appendChild(nameCell);
+        newRow.appendChild(positionCell);
+        table.appendChild(newRow);
+
+        document.getElementById("employeeName").value = "";
+        document.getElementById("position").value = "";
+    }
+</script>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Login</h2>
+    <label for="">Email:</label><br><br>
+    <input id="email" type="text" placeholder="Enter your email address"><br><br>
+    <label for="">Passwork:</label><br><br>
+    <input type="text" type="text" placeholder="Enter your passwork">
+    <br>
+    <br>
+    <button>Login</button>
+    <p>Forgot password?</p>
+</body>
+<script>
+    function register() {
+    let emailText = document.getElementById("email").value.trim();
+    let pass = document.getElementById("pass").value;
+    let confirmPass = document.getElementById("confirmpass").value;
+
+    if (pass !== confirmPass) {
+        console.log("Mật khẩu không tồn tại");
+        return;
+    }
+
+    let user = JSON.parse(localStorage.getItem("user")) || [];
+    let findUser = user.find(item => item.email === emailText);
+
+    if (findUser) {
+        console.log("Email không tồn tại!");
+        return;
+    }
+
+    user.push({ email: emailText, password: pass });
+    localStorage.setItem("user", JSON.stringify(user));
+
+    console.log("Registration successful!");
+}
+</script>
+</html>

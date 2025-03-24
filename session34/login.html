@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- trang đăng nhập -->
+     <h1> trang đăng nhập</h1>
+     <label for="">email</label>
+     <input id="email" type="text"><br>
+     <label for="">mật khẩu</label>
+     <input id="pass" type="text"><br>
+     <button onclick="login()">đăng nhập</button>
+     <script>
+        let users= JSON.parse(localStorage.getItem("users"))||[];
+        function login() {
+            let email= document.getElementById("email").value;
+            let pass= document.getElementById("pass").value;
+            for (let  i= 0;  i< users.length; i++) {
+                    if(users[i].email==email&& users[i].pass==pass){
+                        window.location.href="./home.html";
+                        return;
+                    }
+            }
+            console.log("tài khoản hoặc mật khẩu không đúng!");
+            
+        }
+     </script>
+</body>
+</html>

@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Management</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            width: 80%;
+            margin: auto;
+            text-align: center;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 8px;
+        }
+        th {
+            background-color: #f4f4f4;
+        }
+        .Submit{
+            background: hsl(209, 100%, 50%);
+            border-radius: 5px;
+            color: #ffffff;
+        }
+    </style>
+</head>
+<body>
+    <h2>Task Management</h2>
+    <input id="content" type="text" placeholder="Content">
+    <input id="dueDate" type="date">
+    <input id="status" type="text" placeholder="Status">
+    <input id="assignedTo" type="text" placeholder="Assigned To">
+    <button class="Submit" onclick="addTask()">Submit</button>
+
+    <table>
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Content</th>
+                <th>Due Date</th>
+                <th>Status</th>
+                <th>Assigned To</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody id="taskList"></tbody>
+    </table>
+
+    <script>
+        let courses = [
+            {
+                id: 1,
+                content: "Learn Javascript Session 01",
+                dueDate: "2023-04-17",
+                status: "Pending",
+                assignedTo: "Anh Bách",
+            },
+            {
+                id: 2,
+                content: "Learn Javascript Session 2",
+                dueDate: "2023-04-17",
+                status: "Pending",
+                assignedTo: "Lâm",
+            },
+            {
+                id: 3,
+                content: "Learn CSS Session 1",
+                dueDate: "2023-04-17",
+                status: "Pending",
+                assignedTo: "Hiếu Ci ớt ớt",
+            },
+        ];
+
+        let tasks = JSON.parse(localStorage.getItem("tasks")) || courses;
+
+        function renderTasks() {
+            let taskList = document.getElementById("taskList");
+            taskList.innerHTML = "";
+            tasks.forEach((task, index) => {
+                taskList.innerHTML += `
+                    <tr>
+                        <td>${index + 1}</td>
+                        <td>${task.content}</td>
+                        <td>${task.dueDate}</td>
+                        <td>${task.status}</td>
+                        <td>${task.assignedTo}</td>
+                        <td>
+                            <button onclick="editTask(${index})">Sửa</button>
+                            <button onclick="deleteTask(${index})">Xóa</button>
+                        </td>
+                    </tr>
+                `;
+            });
+            localStorage.setItem("tasks", JSON.stringify(tasks));
+        }
+
+        function addTask() {
+            let task = {
+                content: document.getElementById("content").value,
+                dueDate: document.getElementById("dueDate").value,
+                status: document.getElementById("status").value,
+                assignedTo: document.getElementById("assignedTo").value
+            };
+            tasks.push(task);
+            renderTasks();
+        }
+
+        function editTask(index) {
+            let task = tasks[index];
+            document.getElementById("content").value = task.content;
+            document.getElementById("dueDate").value = task.dueDate;
+            document.getElementById("status").value = task.status;
+            document.getElementById("assignedTo").value = task.assignedTo;
+            tasks.splice(index, 1);
+            renderTasks();
+        }
+
+        function deleteTask(index) {
+            tasks.splice(index, 1);
+            renderTasks();
+        }
+
+        renderTasks();
+    </script>
+</body>
+</html>
