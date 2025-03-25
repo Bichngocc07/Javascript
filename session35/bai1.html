@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .body{
+            font-family: Arial, sans-serif;
+            max-width: 400px;
+            margin: auto;
+            text-align: center;
+        }
+    </style>
+</head>
+<body class="body">
+    <h2>To-Do List K24</h2>
+    <input value="" id="texxt" type="text" placeholder="Nhập công việc">
+    <button onclick="taskList">Thêm</button>
+    <script>
+        let jobs=JSON.parse(localStorage.getItem("jobs"))||[];
+        function addTodo(){
+            let name=document.getElementById("name").value;
+            if(name.length==0){
+                alert("vui lòng nhập dữ liệu");
+                return;
+            }
+            let id=0;
+            if(jobs.length==0){
+                id=1;
+            }else{
+                id=jobs[jobs.length-1].id+1;
+            }
+            let job={
+                id:id,
+                name:name
+            }
+            jobs.push(job);
+            localStorage.setItem("jobs".JSON.stringify(jobs));
+            showJob();
+            return
+        }
+    </script>
+</body>
+</html>
