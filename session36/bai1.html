@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        
+    </style>
+</head>
+<body>
+    <div class="content">
+    <h2>Nhập tên của bạn</h2>
+    <input id="" type="" placeholder="">
+    <button onclick="textName()">Lưu</button>
+    <h2>🙌Chào bạn</h2>
+    <button class="button">Đổi tên</button>
+    </div>
+</body>
+<script>
+    function textName(){
+        let name=document.getElementById("name").value;
+        localStorage.setItem("name",name);
+        document.getElementById("text").textContent="🙌Chào bạn,"+name;
+        document.getElementById("name").value="";
+    }
+    function showText(){
+        let name=localStorage.getItem("name");
+        document.getElementById("text").textContent="🙌Chào bạn,"+name;
+    }
+    showText();
+    function changeName(){
+        let name=localStorage.getItem("name");
+        document.getElementById("name").value=name;
+    }
+</script>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .đỏ{
+            background: red;
+            border-radius: 5px;
+            color: #ffffff;
+            width: 50px;
+            height: 30px;
+        }
+        .xanh{
+            background: rgb(0, 200, 255);
+            border-radius: 5px;
+            color: #ffffff;
+            width: 50px;
+            height: 30px;
+        }
+        .vàng{
+            background: rgb(191, 220, 28);
+            border-radius: 5px;
+            color: #ffffff;
+            width: 50px;
+            height: 30px;
+        }
+        .tím{
+            background: rgb(174, 0, 255);
+            border-radius: 5px;
+            color: #ffffff;
+            width: 50px;
+            height: 30px;
+        }
+        .container{
+            height: 300px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+    <h3>Chọn màu nền bạn yêu thích</h3>
+    <button class="đỏ" onclick="changerColor('đỏ')">Đỏ</button>
+    <button class="xanh" onclick="changerColor('xanh')">Xanh</button>
+    <button class="vàng" onclick="changerColor('vàng')">Vàng</button>
+    <button class="tím" onclick="changerColor('tím')">Tím</button>
+    </div>
+</body>
+<script>
+    function changerColor(color){
+        console.log(color);
+        document.getElementsByClassName("container")[0].style.backgroundColor=color;
+        localStorage.setItem("backgroundColor",color);
+    }
+</script>
+</html>

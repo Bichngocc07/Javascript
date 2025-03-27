@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+        }
+        .container {
+            width: 80%;
+            max-width: 1200px;
+            margin: 20px auto;
+            text-align: center;
+        }
+        .menu {
+            display: grid;
+            gap: 30px;
+            margin-top: 20px;
+        }
+        .content {
+            background: white;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 15px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+        .content:hover {
+            transform: translateY(-5px);
+        }
+        .img {
+            width: 30%;
+            height: auto;
+            border-radius: 8px;
+        }
+        .button {
+            background-color: #30a444;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+        }
+        .button:hover {
+            background-color: #259933;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Bạn thích món nào nhất 🤩</h1>
+        </div>
+        <div class="menu">
+            <div class="content">
+                <img class="img" src="https://th.bing.com/th/id/OIP.43A21v2p0gSVWsXv111azwHaE7?rs=1&pid=ImgDetMain" alt="Bún bò Huế">
+                <p>Bún bò Huế</p>
+                <p>❤️ 0 likes</p>
+                <button class="button">Thích +1</button>
+            </div>
+            <div class="content">
+                <img class="img" src="https://th.bing.com/th/id/OIP.6SA0Y-iHJyzBZtB7jtER2gHaEl?rs=1&pid=ImgDetMain" alt="Phở">
+                <p>Phở</p>
+                <p>❤️ 0 likes</p>
+                <button class="button">Thích +1</button>
+            </div>
+            <div class="content">
+                <img class="img" src="https://dienmaynewsun.com/wp-content/uploads/2019/08/quan-com-tam-ngon.jpg" alt="Cơm tấm">
+                <p>Cơm tấm</p>
+                <p>❤️ 0 likes</p>
+                <button class="button">Thích +1</button>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    let menu=JSON.parse(localStorage.getItem("menu"));
+
+    function renderlist(){
+        for (let i =0;i<menu.length;i++){
+            str+=`
+            <div class="content">
+                <img src="${menu}" alt="Cơm tấm">
+                <p>Cơm tấm</p>
+                <p>❤️ 0 likes</p>
+                <button class="button">Thích +1</button>
+            </div>
+        </div>`
+        }
+        document.getElementsByClassName("menu")[0].innerHTML=str;
+    }
+    renderlist();
+    function like(index){
+        menu[index].like=menu[index].like+1;
+        localStorage.setItem("menu",JSON.stringify(menu));
+    }
+</script>
+</html>
